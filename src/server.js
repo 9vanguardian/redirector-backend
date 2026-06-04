@@ -9,7 +9,7 @@ const { errorHandler } = require("./middleware/error");
 function createServer(context) {
   const app = express();
 
-  app.set("trust proxy", context.env.TRUST_PROXY);
+  app.set("trust proxy", context.env.TRUST_PROXY ? 1 : false);
   app.disable("x-powered-by");
   app.use(helmet());
   app.use(express.json({ limit: "20kb" }));
