@@ -1,21 +1,25 @@
 {
   "name": "redirector-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Consent-based link redirector with Discord logging",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development node index.js",
+    "check": "find index.js src -name '*.js' -print0 | xargs -0 -n1 node --check"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "cors": "^2.8.6",
+    "better-sqlite3": "^11.10.0",
     "discord.js": "^14.26.4",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "nanoid": "^5.1.11"
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0",
+    "ua-parser-js": "^2.0.3",
+    "zod": "^3.25.67"
   }
 }
